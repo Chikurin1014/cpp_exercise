@@ -13,8 +13,10 @@ ch="$1"
 dir="build/test/${1:0:2}"
 
 if [ ! -d "build" ]; then
-    cmake -S . -B build
+    cmake -S . -B build -G Ninja
 fi
+
+cmake --build build --parallel $(nproc)
 
 exe="${dir}/${ch}_test"
 if [ ! -f "$exe" ]; then
@@ -22,4 +24,4 @@ if [ ! -f "$exe" ]; then
     exit 1
 fi
 
-cmake --build build && ${exe}
+eval ${exe}
