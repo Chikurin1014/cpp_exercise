@@ -21,6 +21,22 @@ C++初心者向けの演習問題集
     chmod +x run_test.sh
     ```
 
+### Dev Container (VSCode) を使用する場合
+
+1. [Visual Studio Code](https://code.visualstudio.com/)をインストールする。
+2. [Dev Containers拡張](https://marketplace.visualstudio.com/items/?itemName=ms-vscode-remote.remote-containers)をインストールする。
+3. リポジトリをクローンする。
+    ```sh
+    git clone https://github.com/Chikurin1014/cpp_exercise.git
+    ```
+4. Visual Studio Codeでリポジトリを開く。
+5. コマンドパレットを開き、`Remote-Containers: Reopen in Container`を選択する。
+
+### GitHub Codespaces を使用する場合
+
+1. [GitHubのリポジトリページ](https://github.com/Chikurin1014/cpp_exercise)にアクセスする。
+2. 右上の`Code`ボタンをクリックし、`Codespaces`から`Create codespace on main`を選択する。
+
 ## 使用方法
 
 [ゼロから学ぶC++](https://rinatz.github.io/cpp-book/)の章立てに沿って、`exercise`ディレクトリ内にある各章の演習問題に取り組んでください。
