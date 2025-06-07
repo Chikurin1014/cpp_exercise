@@ -9,6 +9,7 @@ TEST(ch_0102, hello_world) {
 
     auto output = testing::internal::GetCapturedStdout();
 
-    auto answer = std::string("Hello, World!\n");
+    output.erase(output.find_last_of('\n'));
+    auto answer = std::string("Hello, World!");
     ASSERT_EQ(output, answer);
 }
