@@ -30,7 +30,6 @@ void declaration() {
     // bool x;
     int x = std::string("dummy").size(); // ダミー (正しい宣言を選んだあと、削除してください)
 
-    auto t = typeid(x).name();
     std::cout << "変数xの型: " << typeid(x).name() << std::endl;
     return;
 }
