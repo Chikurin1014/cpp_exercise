@@ -2,6 +2,7 @@
 
 option(0201 "variables" ON)
 if(0201)
+    set(CMAKE_CXX_STANDARD 20)
     add_executable(0201_test 0201_test.cpp)
     target_include_directories(0201_test PRIVATE ${PROJECT_SOURCE_DIR}/exercise/02_basic_syntax)
     target_link_libraries(0201_test GTest::gtest_main)
