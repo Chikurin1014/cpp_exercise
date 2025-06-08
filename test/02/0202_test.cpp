@@ -1,7 +1,7 @@
 #include "02-02_primitive-types.hpp"
 
-#include <sstream>
 #include <gtest/gtest.h>
+#include <sstream>
 
 TEST(ch_0202, boolean) {
     testing::internal::CaptureStdout();
@@ -9,7 +9,7 @@ TEST(ch_0202, boolean) {
     boolean(); // from 02-02_primitive-types.hpp
 
     auto output = testing::internal::GetCapturedStdout();
-    
+
     auto ss = std::stringstream(output);
     auto output1 = std::string();
     auto output2 = std::string();
