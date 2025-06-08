@@ -36,7 +36,7 @@ TEST(ch_0202, character) {
     character(); // from 02-02_primitive-types.hpp
 
     auto output = testing::internal::GetCapturedStdout();
-    output.erase(output.find_last_not_of("\n") + 1); // Trim trailing whitespace
+    output.erase(output.find_last_of('\n')); // Trim trailing whitespace
 
     auto ss = std::stringstream();
     ss << "Type of character: " << typeid(char).name() << "   Value of character: a";
@@ -51,7 +51,7 @@ TEST(ch_0202, integer) {
     integer(); // from 02-02_primitive-types.hpp
 
     auto output = testing::internal::GetCapturedStdout();
-    output.erase(output.find_last_not_of("\n") + 1); // Trim trailing whitespace
+    output.erase(output.find_last_of('\n')); // Trim trailing whitespace
 
     auto ss = std::stringstream();
     ss << "Type of integer: " << typeid(int).name() << "   Value of integer: 42";
@@ -66,7 +66,7 @@ TEST(ch_0202, floating_point) {
     floating_point(); // from 02-02_primitive-types.hpp
 
     auto output = testing::internal::GetCapturedStdout();
-    output.erase(output.find_last_not_of("\n") + 1); // Trim trailing whitespace
+    output.erase(output.find_last_of('\n')); // Trim trailing whitespace
 
     auto ss = std::stringstream();
     ss << "Type of floating_point: " << typeid(float).name() << "   Value of floating_point: 3.14";
