@@ -27,7 +27,7 @@ fi
 cmake --build build --parallel $(nproc) 
 exe="${dir}/${ch}_test"
 if [ ! -f "$exe" ]; then
-    echo "章番号 ${ch} のテストファイル(${exe})が見つかりません"
+    echo "章番号 ${ch} のテストファイル(${exe})が見つかりません" 1>&2
     exit 1
 fi
 
