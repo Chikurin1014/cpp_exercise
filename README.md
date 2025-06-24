@@ -10,7 +10,7 @@ C++初心者向けの演習問題集
 
 1. ビルドツールのインストール (Ubuntuの場合)
     ```sh
-    sudo apt install build-essential cmake ninja-build
+    sudo apt install gcc cmake ninja-build
     ```
 2. リポジトリをクローンする。
     ```sh
