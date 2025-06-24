@@ -13,7 +13,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-if [ ! $1 ]; then
+if [ -z "$1" ]; then
     echo "テストを実行する章番号を指定してください。"
     echo "使い方: ${src} <章番号>" 1>&2
     echo "例:     ${src} 0102  ... 01-02_hello_worldの演習問題のテストを実行" 1>&2
