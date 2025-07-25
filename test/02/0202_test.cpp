@@ -66,7 +66,7 @@ TEST(ch_0202, floating_point) {
     floating_point(); // from 02-02_primitive-types.hpp
 
     auto output = testing::internal::GetCapturedStdout();
-    output.erase(output.find_last_of('\n')); // Trim trailing whitespace
+    output.erase(output.find_last_of('\n')); // Trim trailing linebreak
 
     auto ss = std::stringstream();
     ss << "Type of floating_point: " << typeid(float).name() << "   Value of floating_point: 3.14";
