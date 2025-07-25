@@ -36,7 +36,7 @@ TEST(ch_0202, character) {
     character(); // from 02-02_primitive-types.hpp
 
     auto output = testing::internal::GetCapturedStdout();
-    output.erase(output.find_last_of('\n')); // Trim trailing whitespace
+    output.erase(output.find_last_of('\n')); // Trim trailing linebreak
 
     auto ss = std::stringstream();
     ss << "Type of character: " << typeid(char).name() << "   Value of character: a";
@@ -51,7 +51,7 @@ TEST(ch_0202, integer) {
     integer(); // from 02-02_primitive-types.hpp
 
     auto output = testing::internal::GetCapturedStdout();
-    output.erase(output.find_last_of('\n')); // Trim trailing whitespace
+    output.erase(output.find_last_of('\n')); // Trim trailing linebreak
 
     auto ss = std::stringstream();
     ss << "Type of integer: " << typeid(int).name() << "   Value of integer: 42";
