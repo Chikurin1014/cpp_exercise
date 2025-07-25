@@ -1,7 +1,6 @@
 #!/bin/env bash
 
-which gcc > /dev/null 2>&1
-if [ $? -ne 0 ]; then
+if ! which gcc > /dev/null 2>&1; then
     echo "ビルドツール\`gcc\`が見つかりません。以下のコマンドからインストールしてください:" 1>&2
     echo "sudo apt install gcc" 1>&2
     echo "また、必要なビルドツールをすべてインストールするには、以下のコマンドを実行してください:" 1>&2
@@ -9,8 +8,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-which cmake > /dev/null 2>&1
-if [ $? -ne 0 ]; then
+if ! which cmake > /dev/null 2>&1; then
     echo "ビルドツール\`cmake\`が見つかりません。以下のコマンドからインストールしてください:" 1>&2
     echo "sudo apt install cmake" 1>&2
     echo "また、必要なビルドツールをすべてインストールするには、以下のコマンドを実行してください:" 1>&2
@@ -18,8 +16,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-which ninja > /dev/null 2>&1
-if [ $? -ne 0 ]; then
+if ! which ninja > /dev/null 2>&1; then
     echo "ビルドツール\`ninja\`が見つかりません。以下のコマンドからインストールしてください:" 1>&2
     echo "sudo apt install ninja-build" 1>&2
     echo "また、必要なビルドツールをすべてインストールするには、以下のコマンドを実行してください:" 1>&2
@@ -28,7 +25,7 @@ if [ $? -ne 0 ]; then
 fi
 
 src="${BASH_SOURCE:-$0}"
-cd "$(dirname "${src}")"
+cd "$(dirname "${src}")" || { echo "Error: スクリプトのディレクトリに移動できません。" 1>&2; exit 1; }
 
 ch="$1"
 dir="build/test/${1:0:2}"
@@ -44,7 +41,7 @@ if [ ! -d "build" ]; then
     cmake -S . -B build -G Ninja
 fi
 
-cmake --build build --parallel $(nproc)
+cmake --build build --parallel "$(nproc)"
 exe="${dir}/${ch}_test"
 if [ ! -f "$exe" ]; then
     echo "無効な章番号(${ch})が指定されています。有効な章番号は以下の通りです:" 1>&2
@@ -67,4 +64,4 @@ if [ ! -f "$exe" ]; then
     exit 1
 fi
 
-eval ${exe}
+eval "$exe"
